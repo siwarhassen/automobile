@@ -1,0 +1,143 @@
+
+{
+  "header" :
+  {
+  "TITLE":"home",
+  "occasion":"used vehicle",
+   "neuf":"NEW PRICE",
+    "marque":"By brand",
+     "space":"My space",
+      "ajout":"add car"
+  }
+,
+    "FOOTER" :
+    {
+    "contact":"Contact us now!",
+    "topmarque":"Top Brand",
+"youcancontact":"You can contact us"
+    }
+    ,
+        "Accueil" :
+        {
+        "about":"About us",
+        "question":"Why people choose us",
+    "reponse":"Because we offer you the best quality/price",
+    "reponse1":"buy ​​a new car",
+    "reponse2":"buy a used car",
+      "reponse3":"sell your car",
+        "reponse4":"The best-selling cars",
+        "top":"Top car brands",
+        "description":"These are the best-selling cars in Tunisia",
+        "voiture1":"A true star in its category, the Renault Clio is the best-seller of the diamond brand (leading sales of new cars in France for many years). Produced since 1990, by the French manufacturer, this city car is now in its fifth generation.",
+        "voiture2":"Having a more family vocation, this 4-door version of the Rio is longer than the five-door version (4385 mm against 4065), offers roughly the same roominess, but above all has a larger trunk with a capacity of 387 liters.",
+        "voiture3":"The Volkswagen Polo V is a 5-seater automobile from the German brand Volkswagen, which appeared in 2009. It succeeds the Polo IV. It won the European Car of the Year trophy in 2010.",
+        "doyou1":"Do You Want To Buy A Car",
+        "doyou2":"Do You Want To Buy AN OLD Car",
+        "oucar":"our cars",
+        "best":"Latest cars for sale",
+          "all":"All cars",
+              "new":"new",
+              "trouvez":"FIND YOUR DREAM CAR",
+              "year":"Select Year",
+              "model":"Select Model",
+             "brand":"  Select Brand",
+              "age":"  Select Mileage",
+              "chercher":"Searching",
+              "occasion":"old car",
+              "new":"new car",
+              "learn":"learn more"
+
+        },
+
+        "voitures" :
+        {
+        "search":"Car Search!",
+        "filter":"Car Filter",
+        "prix":"price",
+        "couleur":"colors",
+        "mileage":"mileage",
+        "model":"model",
+        "filt":"Filter",
+        "sort":"Sort by",
+        "high":"Price:Highest first",
+        "low":"Price:Lowest first",
+        "show":"Show On page",
+        "partir":"From",
+"placeholder":"Search...",
+"cars":"cars",
+"parmarque":"Cars by brand",
+"occasions":"Used vehicles",
+"cars":"cars"
+},
+
+"detail" :
+{
+"telephone":"Phone number:",
+"adresse":"Adress",
+"prix":"price",
+"caracteristique":"characteristics",
+"motorisation":"motorization",
+"vehicle ":"vehicle location",
+"safety":"safety design",
+"extra":"extra design",
+"location":"location",
+"submit":"submit now",
+"deletec":"delete",
+"comment":"comment",
+"comments":"comments",
+"reply":"leave a reply"
+}
+,
+"espace" :
+{
+"annonce":"My ads",
+"vendre":"sell a car",
+"modifier":"update your account",
+"favoris":"my favourites",
+"deletev":"delete",
+"updatev":"update"
+},
+
+"favoris":
+{
+"addf":"add favourite",
+"deletef":"delete favourite"
+
+}
+,
+"couleur":
+{
+"blanc":"white",
+"rouge":"red",
+"blue":"blue",
+"noir":"black"
+
+},
+"transmission":
+{
+"integral":"integral"
+
+},
+
+"ajout":
+{
+"marque":"Brand",
+"modele":"Model",
+"motorisation":"Motorization",
+"prix":"Price",
+"adresse":"Adress",
+"telephone":"phone",
+"carosserie":"Bodywork ",
+"energie":"Energy",
+"puissance":"fiscal power",
+"couleur":"Color",
+"cylindre":"Number of cylinder",
+"valider":"validate",
+"photo":"main photo",
+"kilometrage":"Mileage",
+"ajout":"add",
+"update":"Update car"
+
+}
+
+}

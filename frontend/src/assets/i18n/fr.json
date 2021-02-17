@@ -1,0 +1,149 @@
+
+{
+  "header" :
+  {
+  "TITLE":"accueil",
+  "occasion":"occasions",
+   "neuf":"prix du neuf",
+   "marque":"Par marque",
+   "space":"Mon espace",
+   "ajout":"ajouter voiture"
+  }
+,
+  "FOOTER" :
+  {
+  "contact":"Contactez-nous maintenant!",
+    "topmarque":"Top Marque",
+    "youcancontact":"Vous pouvez nous contacter"
+
+  }
+  ,
+      "Accueil" :
+      {
+       "about":"A propos",
+       "reponse":"Car on vous offre le meilleur rapport qualité/prix",
+       "reponse1":"acheter une nouvelle voiture",
+       "reponse2":"acheter une Voiture d'occasion",
+       "reponse3":"Vendre votre voiture.",
+       "reponse4":"Les voitures les plus vendues",
+       "top":"Top des marques de voitures",
+       "description":"ce sont les voitures les plus vendues en Tunisie",
+       "voiture1":"Véritable star dans sa catégorie, la Renault Clio est le best-seller de la marque au losange (en tête des ventes de voitures neuves en France depuis de nombreuses années). Produite depuis 1990, par le constructeur français,cette citadine en est désormais à sa cinquième génération.",
+          "voiture2":"Ayant une vocation plus familiale, cette version 4 portes de la Rio est plus longue que la version cinq portes (4385 mm contre 4065), offre à peu près la même habitabilité, mais dispose surtout d’un plus grand coffre d’une capacité de 387 litres.",
+          "voiture3":"La Volkswagen Polo V est une automobile 5 places de la marque allemande Volkswagen apparue en 2009. Elle succède à la Polo IV. Elle a remporté le trophée européen de la voiture de l'année en 2010.",
+          "doyou1":"Voulez-vous acheter une nouvelle voiture",
+          "doyou2":"Voulez-vous acheter une ancienne voiture",
+          "oucar":"Nos voitures",
+          "best":"Dernières voitures en ventes",
+            "all":"toutes les voitures",
+              "new":"nouvelles voitures",
+                "trouvez":"TROUVEZ VOTRE VOITURE DE RÊVE",
+                "year":"Année",
+                "model":"modèle",
+               "brand":"marque",
+                "age":"Kilométrage",
+                  "chercher":"Chercher",
+                    "occasion":"occasion",
+                      "new":"nouvelle voiture",
+                        "learn":"plus de details"
+
+
+
+      },
+
+
+      "voitures" :
+      {
+      "search":"chercher!",
+      "filter":"Filtrer",
+      "prix":"prix",
+      "couleur":"couleurs",
+      "mileage":"Kilométrage",
+      "model":"modèle",
+      "filt":"Filtrer",
+      "sort":"Trier par",
+      "high":"Prix:Le plus élevé",
+      "low":"Price:Le plus bas",
+      "show":"Afficher sur la page",
+      "partir":"A partir ",
+"placeholder":"Chercher...",
+"cars":"cars",
+"parmarque":"Voitures par marque",
+"occasions":"Occasions",
+"cars":"voitures"
+
+},
+"detail" :
+{
+"telephone":"Téléphone",
+"adresse":"Adresse",
+"prix":"prix",
+"caracteristique":"caractéristiques",
+"motorisation":"motorisation",
+"vehicle ":"Localisation",
+"safety":"conception ",
+"extra":"conception supplémentaire",
+"location":"localisation",
+"submit":"soumettre",
+"deletec":"supprimer",
+"comment":"commenter",
+"comments":"commentaires",
+"reply":"répondre"
+
+}
+,
+"espace" :
+{
+"annonce":"Mes annonces",
+"vendre":"vendre une voiture",
+"modifier":"Modifier compte",
+"favoris":"mes favoris",
+"deletev":"supprimer",
+"updatev":"modifier"
+}
+,
+
+"favoris":
+{
+"addf":"ajouter favoris",
+"deletef":"supprimer favoris"
+
+},
+
+"couleur":
+{
+"blanc":"blanc",
+"rouge":"rouge",
+"blue":"bleu",
+"noir":"noir"
+
+},
+"transmission":
+{
+"integral":"intégrale"
+
+},
+
+
+"ajout":
+{
+"marque":"Marque",
+"modele":"Modèle",
+"motorisation":"Motorisation",
+"prix":"Prix",
+"adresse":"Adresse",
+"telephone":"Téléphone",
+"carosserie":"carosserie",
+"energie":"Energie",
+"puissance":"Puissance fiscale",
+"couleur":"Couleur",
+"cylindre":"Nombre de cylindre",
+"valider":"valider",
+"photo":"Photo principale",
+"kilometrage":"kilométrage",
+"ajout":"ajouter",
+"update":"Modifier voiture"
+
+}
+
+}

@@ -1,0 +1,15 @@
+label{
+	font-size: 15px;
+	color: #db2d2e;
+	font-weight: 700;
+}
+button
+{
+  	background-color: #db2d2e;
+}
+button:hover,button:focus{
+    background-color:rgb(200,200,200);
+}
+button:disabled{
+
+}

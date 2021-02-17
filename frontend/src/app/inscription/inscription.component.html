@@ -1,0 +1,181 @@
+
+<div class="breadcrumb-option set-bg" data-setbg="assets/img/breadcrumb-bg.jpg" style="background-image: url(&quot;assets/img/breadcrumb-bg.jpg&quot;);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="breadcrumb__text">
+                        <h2>Bienvenue!</h2>
+                        <div class="breadcrumb__links">
+                            <a href="./index.html"><i class="fa fa-home"></i> Accueil</a>
+
+                            <span>Login</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<div  class="page-content" style="margin-left:160px;margin-top:-100px">
+  <div class="form-v8-content">
+    <div class="form-left">
+      <img src="assets/img/log.png" alt="form">
+    </div>
+    <div class="form-right">
+      <div class="tab">
+        <div class="tab-inner">
+          <button id="defaultOpen" class="tablinks" onclick="openCity(event, 'sign-up')" >Sign Up</button>
+        </div>
+        <div class="tab-inner">
+          <button class="tablinks" onclick="openCity(event, 'sign-in')" >Sign In</button>
+        </div>
+      </div>
+
+      <form class="form-detail" novalidate [formGroup]="signupForm" (ngSubmit)="onSubmit()"  >
+        <div  class="tabcontent" id="sign-up">
+
+
+                    <div class="form-row">
+                      <label class="form-row-inner">
+                        <input  formControlName="fullname" type="text"  name="your_email_1" id="your_email_1" class="input-text" matInput required>
+                        <span class="label"  *ngIf="!signupForm.get('fullname').touched ||!signupForm.get('fullname').hasError('required')" >Fullname</span>
+                        <span style="color:red" class="label" *ngIf="signupForm.get('fullname').hasError('required') && signupForm.get('fullname').touched" >Fullname</span>
+
+                        <p *ngIf="signupForm.get('fullname').hasError('required') && signupForm.get('fullname').touched"  style="color:red">verify your fullname</p>
+                          <p *ngIf="signupForm.get('fullname').errors?.minlength && signupForm.get('fullname').touched"  style="color:red">your fullname is very short</p>
+                      </label>
+                    </div>
+<br>
+                    <div class="form-row">
+                      <label class="form-row-inner">
+                        <input  formControlName="email" type="text" matInput  name="your_email_1" id="your_email_1" class="input-text" required>
+                        <span class="label"  *ngIf="!signupForm.get('email').touched ||!signupForm.get('email').hasError('required')" >Email</span>
+                        <span style="color:red" class="label" *ngIf="signupForm.get('email').hasError('required') && signupForm.get('email').touched" >Email</span>
+                        <p *ngIf="signupForm.get('email').hasError('required') && signupForm.get('email').touched"  style="color:red">verify your Email</p>
+                              <p *ngIf="signupForm.get('email').hasError('email') && signupForm.get('email').touched"  style="color:red">incorrecte type d'email</p>
+                      </label>
+                    </div>
+                    <br>
+                    <div class="form-row">
+                      <label class="form-row-inner">
+                        <input  formControlName="telnum" type="number"    class="input-text" matInput required>
+                        <span class="label"  *ngIf="!signupForm.get('telnum').touched ||!signupForm.get('telnum').hasError('required')" >Phone Number</span>
+                        <span style="color:red" class="label" *ngIf="signupForm.get('telnum').hasError('required') && signupForm.get('telnum').touched" >Phone Number</span>
+                        <p *ngIf="signupForm.get('telnum').hasError('required') && signupForm.get('telnum').touched "  style="color:red">verify your phone</p>
+
+                        <p *ngIf="signupForm.get('telnum').errors?.minlength && signupForm.get('telnum').touched"  style="color:red">your phone is very short</p>
+
+                      </label>
+                    </div>
+<br>
+                    <div class="form-row">
+                      <label class="form-row-inner">
+                        <input  formControlName="password" type="password" matInput  name="your_email_1" id="your_email_1" class="input-text" required>
+                        <span class="label"  *ngIf="!signupForm.get('password').touched ||!signupForm.get('password').hasError('required')" >Password</span>
+                        <span style="color:red" class="label" *ngIf="signupForm.get('password').hasError('required') && signupForm.get('password').touched" >Password</span>
+                        <p *ngIf="signupForm.get('password').hasError('required') && signupForm.get('password').touched"  style="color:red">verify your password</p>
+                          <p *ngIf="signupForm.get('password').errors?.minlength && signupForm.get('password').touched"  style="color:red">your password is very short</p>
+
+                      </label>
+                    </div>
+<br>
+                    <div class="form-row">
+                      <label class="form-row-inner">
+                        <input  ngValidateEqual="password"  formControlName="confirmPassword" type="password" matInput  name="your_email_1" id="your_email_1" class="input-text" required>
+                        <span class="label"  *ngIf="!signupForm.get('confirmPassword').touched ||!signupForm.get('confirmPassword').hasError('notEqual') " >Confirm Password</span>
+                        <span style="color:red" class="label" *ngIf="signupForm.get('confirmPassword').hasError('notEqual')  && signupForm.get('confirmPassword').touched" >Confirm Password</span>
+                        <p *ngIf="signupForm.get('confirmPassword').hasError('notEqual')  && signupForm.get('confirmPassword').touched"  style="color:red">Your confirmation password does not match the password you entered</p>
+
+                      </label>
+                    </div>
+
+
+      <!--    <mat-form-field class=" form-detail"  >
+                <input class="input-text"  matInput  formControlName="fullname" minlength=4  required>
+                <mat-error *ngIf="signupForm.get('fullname').hasError('required') && signupForm.get('fullname').touched">fullname is required</mat-error>
+
+              </mat-form-field>-->
+
+      <!--        <mat-form-field class="example-full-width">
+               <input matInput formControlName="email" placeholder="Email" type="email" required>
+               <mat-error *ngIf="signupForm.get('email').hasError('required') && signupForm.get('email').touched">ce champ est obligatoire</mat-error>
+                <mat-error *ngIf="signupForm.get('email').hasError('email') && signupForm.get('email').touched">incorrecte type d'email</mat-error>
+                <br>
+             </mat-form-field>-->
+
+        <!--
+                <input matInput  formControlName="telnum" minlength=8 maxlength=8 placeholder="Tel. Number" type="number" required>
+                <mat-error *ngIf="signupForm.get('telnum').hasError('required') && signupForm.get('telnum').touched">Tel. number is required</mat-error>
+        -->
+
+
+            <!--  <mat-form-field class="example-full-width"> -->
+            <!--   <input matInput formControlName="password" placeholder="password" type="password" required>
+               <mat-error *ngIf="signupForm.get('password').hasError('required') && signupForm.get('password').touched">ce champ est obligatoire</mat-error> -->
+              <!-- <mat-error *ngIf="signupForm.get('password').minlength && signupForm.get('password').touched">incorrecte type de password</mat-error>
+                <br> -->
+
+        <!--     <mat-form-field class="example-full-width"> -->
+        <!--      <input matInput formControlName="confirmPassword" placeholder="Confirmpassword" type="password" required>
+              <mat-error *ngIf="signupForm.get('confirmPassword').hasError('required') && signupForm.get('confirmPassword').touched">ce champ est obligatoire</mat-error> -->
+            <!--   <mat-error *ngIf="signupForm.get('confirmPassword').mustMatch && signupForm.get('confirmPassword').touched">incorrecte type de password</mat-error> -->
+               <br>
+
+
+         <button type="submit" class="site-btn" [disabled]="signupForm.invalid" >Soumettre</button>
+        </div>
+      </form>
+        <p class="text-danger">{{ errorMessage }}</p>
+
+
+
+
+      <form class="form-detail" [formGroup]="loginForm">
+        <div class="tabcontent" id="sign-in">
+
+          <div class="form-row">
+            <label class="form-row-inner">
+              <input  formControlName="email" type="text" name="your_email_1" id="your_email_1" class="input-text" required>
+              <span class="label">E-Mail</span>
+                <span class="border"></span>
+            </label>
+          </div>
+          <br>
+          <div class="form-row">
+            <label class="form-row-inner">
+              <input  formControlName="password" type="password" name="password_1" id="password_1" class="input-text" required>
+              <span class="label">Password</span>
+              <span class="border"></span>
+            </label>
+          </div>
+<br>
+
+        <button class="site-btn" (click)="onLogin()" [disabled]="loginForm.invalid">Connexion</button>
+
+        </div>
+      </form>
+
+
+
+
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+		function openCity(evt, cityName) {
+		    var i, tabcontent, tablinks;
+		    tabcontent = document.getElementsByClassName("tabcontent");
+		    for (i = 0; i < tabcontent.length; i++) {
+		        tabcontent[i].style.display = "none";
+		    }
+		    tablinks = document.getElementsByClassName("tablinks");
+		    for (i = 0; i < tablinks.length; i++) {
+		        tablinks[i].className = tablinks[i].className.replace(" active", "");
+		    }
+		    document.getElementById(cityName).style.display = "block";
+		    evt.currentTarget.className += " active";
+		}
+
+		// Get the element with id="defaultOpen" and click on it
+		document.getElementById("defaultOpen").click();
+	</script>

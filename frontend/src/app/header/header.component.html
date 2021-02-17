@@ -1,0 +1,66 @@
+
+<header class="header">
+
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-2">
+              <div class="header__logo">
+                  <a href="./index.html"><img src="assets/img/logo.png" alt=""></a>
+              </div>
+          </div>
+          <div class="col-lg-10" >
+              <div class="header__nav" style="margin-left:250px">
+                  <nav class="header__menu" >
+                      <ul>
+
+                        <li routerLinkActive="active">
+                          <a routerLink="" i18n="Title for the under construction card">{{'header.TITLE' |translate}}</a>
+                        </li>
+
+                          <li routerLinkActive="active">
+                            <a routerLink="voitureNeuves">{{'header.neuf' |translate}}</a>
+                          </li>
+
+                          <li routerLinkActive="active"><a routerLink="voituresOccasions">{{'header.occasion' |translate}}</a></li>
+                            <li routerLinkActive="active"><a routerLink="stat">stat</a>
+                              <ul class="dropdown">
+
+                                  <li><a href="./car-details.html"></a></li>
+                                  <li></li>
+                              </ul>
+                          </li>
+
+
+                          <li routerLinkActive="active" *ngIf="isUserLoggedIn" >
+                            <a routerLink="monespace">{{'header.space' |translate}}</a>
+                            <ul class="dropdown">
+
+                                <li><a   (click)="logout()">Deconnexion</a></li>
+
+                            </ul>
+                        </li>
+
+                      </ul>
+                  </nav>
+                  <div class="header__nav__widget">
+                      <div class="header__nav__widget__btn">
+
+
+                      </div>
+                      <a  *ngIf="!isUserLoggedIn" routerLink="inscription" class="primary-btn">Login</a>
+<span *ngIf="!isUserLoggedIn" style="opacity: 0.0;">hdfgrf</span>
+                      <select style=" color: #db2d2e; border-color:white" #langselect (change)="translate.use(langselect.value) "class="" name="">
+                        <option *ngFor="let lang of translate.getLangs()" [value]="lang">{{lang}}</option>
+
+                      </select>
+                  </div>
+
+
+              </div>
+          </div>
+      </div>
+      <div class="canvas__open">
+          <span class="fa fa-bars"></span>
+      </div>
+  </div>
+</header>

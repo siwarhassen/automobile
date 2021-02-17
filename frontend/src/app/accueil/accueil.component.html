@@ -1,0 +1,360 @@
+
+<section class="hero spad set-bg" style="background-image: url('assets/img/hero-bg.jpg');">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7">
+                <div class="hero__text">
+                    <div class="hero__text__title">
+                        <span>{{'Accueil.trouvez' |translate}}</span>
+                        <h2>Porsche Cayenne S</h2>
+                    </div>
+                    <div class="hero__text__price">
+                        <div class="car-model">Model 2019</div>
+                        <h2>500 000 <span> DT</span></h2>
+                    </div>
+
+                    <a href="#" class="primary-btn more-btn">{{'Accueil.learn' |translate}}</a>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="hero__tab">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">{{'Accueil.occasion' |translate}}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#tabs-2" role="tab">{{'Accueil.new' |translate}}</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="tabs-1" role="tabpanel">
+                            <div class="hero__tab__form">
+                                <h2></h2>
+                                <form>
+                                    <div class="select-list">
+                                        <div class="select-list-item">
+                                            <p>{{'Accueil.year' |translate}}</p>
+                                            <select  matInput (change)="selectChangeanneeancienne($event)">
+                                                <option data-display=" ">{{'Accueil.year' |translate}}</option>
+                                                <option value="2020">2020</option>
+                                                <option value="2019">2019</option>
+                                                <option value="2018">2018</option>
+                                                <option value="2017">2017</option>
+                                                <option value="2016">2016</option>
+                                                <option value="2015">2015</option>
+                                                  <option value="2014">2014</option>
+                                                    <option value="2013">2013</option>
+                                                      <option value="2012">2012</option>
+                                                        <option value="2011">2011</option>
+                                                          <option value="2010">2010</option>
+                                                            <option value="2009">2009</option>
+                                                                <option value="2008">2008</option>
+                                                                    <option value="2007">2007</option>
+                                                                        <option value="2006">2006</option>
+                                                                            <option value="2005">2005</option>
+                                                                                <option value="2004">2004</option>
+                                            </select>
+                                        </div>
+                                        <div class="select-list-item">
+                                            <p>{{'Accueil.brand' |translate}}</p>
+                                            <select matInput (change)="selectChangemarqueancienne($event)">
+                                                <option data-display=" ">{{'Accueil.brand' |translate}}</option>
+                                                <option *ngFor="let m of marques" value={{m.marque}}>{{m.marque}}</option>
+                                            </select>
+                                        </div>
+                                        <div class="select-list-item">
+                                            <p>{{'Accueil.model' |translate}}</p>
+                                            <select matInput (change)="selectChangemodeleancienne($event)">
+                                                <option data-display=" ">{{'Accueil.model' |translate}}</option>
+                                                <option *ngFor="let va of voituresancienne"  value={{va.modele}}>{{va.modele}}</option>
+
+                                            </select>
+                                        </div>
+                                        <div class="select-list-item">
+                                            <p>{{'Accueil.age' |translate}}</p>
+                                            <select matInput (change)="selectChangekilometrageancienne($event)">
+                                                <option data-display=" ">{{'Accueil.age' |translate}}</option>
+                                                <option value="150">27</option>
+                                                <option value="150">25</option>
+                                                <option value="25">15</option>
+                                                <option value="10">10</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <button (click)="chercherancienne()" type="submit" class="site-btn">{{'Accueil.chercher' |translate}}</button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="tabs-2" role="tabpanel">
+                            <div class="hero__tab__form">
+                                <h2></h2>
+                                <form>
+                                    <div class="select-list">
+
+                                        <div class="select-list-item">
+                                            <p>{{'Accueil.brand' |translate}}</p>
+                                            <select (change)="selectChangemarquenouvelle($event)">
+                                                <option data-display=" ">{{'Accueil.brand' |translate}}</option>
+                                                <option *ngFor="let m of marques" value={{m.marque}}>{{m.marque}}</option>
+
+                                            </select>
+                                        </div>
+                                        <div class="select-list-item">
+                                            <p>{{'Accueil.model' |translate}}</p>
+                                            <select matInput (change)="selectChangemodelenouvelle($event)">
+                                                <option data-display=" ">{{'Accueil.model' |translate}}</option>
+                                                <option *ngFor="let va of voituresnouvelles"  value={{va.modele}}>{{va.modele}}</option>
+
+                                            </select>
+                                        </div>
+
+                                    </div>
+
+                                    <button  (click)="cherchernouvelle()"  type="submit" class="site-btn">{{'Accueil.chercher' |translate}}</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="car spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title">
+                    <span>{{'Accueil.oucar' |translate}}</span>
+                    <h2>{{'Accueil.best' |translate}}</h2>
+                </div>
+                <ul class="filter__controls">
+                    <li class="active" data-filter="*">{{'Accueil.all' |translate}}</li>
+                    <li data-filter=".sale">{{'Accueil.new' |translate}}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row car-filter">
+            <div class="col-lg-3 col-md-4 col-sm-6 mix">
+                <div class="car__item">
+
+                        <img src="assets/img/cars/car-7.jpg" alt="" >
+
+                    <div class="car__item__text">
+                        <div class="car__item__text__inner">
+                            <div class="label-date">2016</div>
+                            <h5><a href="#">Porsche cayenne turbo s</a></h5>
+                            <ul>
+                                <li><span>120</span> km</li>
+                                <li>Auto</li>
+
+                            </ul>
+                        </div>
+                        <div class="car__item__price">
+                            <span class="car-option">occasion</span>
+                            <h6>45 000 DT<span></span></h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mix sale">
+                <div class="car__item">
+
+                        <img src="assets/img/cars/car-4.jpg" alt="">
+
+                    <div class="car__item__text">
+                        <div class="car__item__text__inner">
+                            <div class="label-date">2020</div>
+                            <h5><a href="#">DS 3 CROSSBACK</a></h5>
+                            <ul>
+                                <li><span>200 </span> KM</li>
+                                <li>Auto</li>
+
+                            </ul>
+                        </div>
+                        <div class="car__item__price">
+                            <span class="car-option sale">NEW</span>
+                            <h6>120 000 DT</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mix">
+                <div class="car__item">
+
+                        <img src="assets/img/cars/car-5.jpg" alt="">
+
+                    <div class="car__item__text">
+                        <div class="car__item__text__inner">
+                            <div class="label-date">2017</div>
+                            <h5><a href="#">Bmw s1000rr 2019 m</a></h5>
+                            <ul>
+                                <li><span>110</span> KM</li>
+                                <li>Auto</li>
+
+                            </ul>
+                        </div>
+                        <div class="car__item__price">
+                            <span class="car-option">Occasion</span>
+                            <h6>35 000 DT<span></span></h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mix sale">
+                <div class="car__item">
+
+                        <img src="assets/img/cars/car-1.jpg" alt="">
+
+                    <div class="car__item__text">
+                        <div class="car__item__text__inner">
+                            <div class="label-date">2019</div>
+                            <h5><a href="#">AUDI Q3 SPORTBACK</a></h5>
+                            <ul>
+                                <li><span>80</span> KM</li>
+                                <li>Auto</li>
+
+                            </ul>
+                        </div>
+                        <div class="car__item__price">
+                            <span class="car-option sale">NEW</span>
+                            <h6>45 000 DT</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+</section>
+<!-- Hero Section End -->
+<section class="chooseus spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5">
+                <div class="chooseus__text">
+                    <div class="section-title">
+                        <h2>{{'Accueil.question' |translate}}</h2>
+                        <p>{{'Accueil.reponse' |translate}}</p>
+                    </div>
+                    <ul>
+                        <li><i class="fa fa-check-circle"></i> {{'Accueil.reponse1' |translate}}</li>
+                        <li><i class="fa fa-check-circle"></i> {{'Accueil.reponse2' |translate}}
+                        </li>
+                        <li><i class="fa fa-check-circle"></i>{{'Accueil.reponse3' |translate}}
+                        </li>
+                        <li><i class="fa fa-check-circle"></i> {{'Accueil.reponse4' |translate}}</li>
+                    </ul>
+                    <a href="#" class="primary-btn">{{'Accueil.about' |translate}}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="chooseus__video set-bg">
+        <img src="assets/img/chooseus-video.png" alt="">
+        <a href="https://www.youtube.com/watch?v=Xd0Ok-MkqoE"
+            class="play-btn video-popup"><i class="fa fa-play"></i></a>
+    </div>
+</section>
+
+<!-- Services Section Begin -->
+
+<!-- Services Section End -->
+
+
+
+<!-- Car Section Begin -->
+
+<!-- Car Section End -->
+
+<!-- Chooseus Section Begin -->
+
+<!-- Chooseus Section End -->
+
+<!-- Latest Blog Section Begin -->
+<section class="latest spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title">
+                    <span></span>
+                    <h2> {{'Accueil.top' |translate}}</h2>
+                    <p> {{'Accueil.description' |translate}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <div class="latest__blog__item">
+                    <div class="latest__blog__item__pic set-bg"  style="background-image: url('assets/img/latest-blog/lb-1.jpg');" >
+                        <ul>
+                            <li></li>
+
+                        </ul>
+                    </div>
+                    <div class="latest__blog__item__text">
+                        <h5>RENAULT CLIO</h5>
+                        <p> {{'Accueil.voiture1' |translate}}</p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="latest__blog__item">
+                    <div class="latest__blog__item__pic set-bg"  style="background-image: url('assets/img/latest-blog/lb-2.jpg');" >
+                        <ul>
+
+                            <li></li>
+                        </ul>
+                    </div>
+                    <div class="latest__blog__item__text">
+                        <h5>ISUZU</h5>
+                        <p> {{'Accueil.voiture2' |translate}}</p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="latest__blog__item">
+                    <div class="latest__blog__item__pic set-bg" style="background-image: url('assets/img/latest-blog/lb-3.jpg');">
+                        <ul>
+                            <li></li>
+
+                        </ul>
+                    </div>
+                    <div class="latest__blog__item__text">
+                        <h5>KIA RIO BERLINE</h5>
+                        <p> {{'Accueil.voiture3' |translate}}</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Latest Blog Section End -->
+
+<!-- Cta Begin -->
+<div class="cta">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6">
+                <div class="cta__item set-bg"  style="background-image: url('assets/img/cta/cta-1.jpg');">
+                    <h4> {{'Accueil.doyou1' |translate}}</h4>
+
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="cta__item set-bg"  style="background-image: url('assets/img/cta/cta-2.jpg');" >
+                    <h4> {{'Accueil.doyou2' |translate}}</h4>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Cta End -->

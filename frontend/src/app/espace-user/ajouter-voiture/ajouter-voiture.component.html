@@ -1,0 +1,308 @@
+
+<div class="breadcrumb-option set-bg" data-setbg="assets/img/breadcrumb-bg.jpg" style="background-image: url(&quot;assets/img/breadcrumb-bg.jpg&quot;);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="breadcrumb__text">
+  <h2>{{'header.ajout' |translate}}</h2>
+                        <div class="breadcrumb__links">
+                            <a href="./index.html"><i class="fa fa-home"></i> {{'header.TITLE' |translate}}</a>
+                            <a [routerLink]="['/voitureNeuves']">{{'header.space' |translate}}</a>
+                            <span>{{'header.ajout' |translate}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="background-image: url(&quot;assets/img/voiturebackground.png&quot;);margin-top:-80px;">
+        <form style="margin-top:100px;margin-left:180px;" novalidate [formGroup]="voitureForm" (ngSubmit)="onSubmit()">
+          <div class="form-row">
+            <div class="col-md-4 mb-3">
+              <label  style=" margin-left:180px" for="validationServer02">{{'ajout.marque' |translate}}</label><span> *</span>
+              <input  [ngClass]="{'is-invalid ':voitureForm.get('marque').hasError('required') && voitureForm.get('marque').touched}" matInput  formControlName="marque" list="bieres" type="text" id="choix_bieres_ami"  class="form-control " placeholder="marque" style="width:150px; margin-left:180px">
+           <datalist id="bieres">
+             <select  class="custom-select my-1 mr-sm-2" >
+        <option selected>Choose</option>
+        <option *ngFor="let m of marques " value={{m.marque}}>{{m.marque}}</option>
+
+      </select>
+           </datalist>
+            </div>
+            <div class="col-md-4 mb-3" >
+              <label for="validationServer02" style="margin-left:-3px" >{{'ajout.modele' |translate}}</label><span> *</span>
+              <input matInput  formControlName="modele" style="width:150px; margin-left:-3px" type="text"  [ngClass]="{'is-invalid ':voitureForm.get('modele').hasError('required') && voitureForm.get('modele').touched}" class="form-control " id="validationServer02"   required >
+              <div  *ngIf="voitureForm.get('modele').hasError('required') && voitureForm.get('modele').touched" class="invalid-feedback" >
+                modèle obligatoire!
+              </div>
+            </div>
+            <div class="col-md-3 mb-3">
+              <label for="validationServer04" style="margin-left:-170px">{{'ajout.motorisation' |translate}}</label>
+              <input style="margin-left:-170px" type="text" class="form-control " id="validationServer04" required>
+              <div class="invalid-feedback">
+                Please provide a valid state.
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-md-6 mb-3">
+              <label style=" margin-left:180px" for="validationServer02"  >{{'Accueil.year' |translate}}</label><span> *</span>
+              <select  [ngClass]="{'is-invalid ':voitureForm.get('annee').hasError('required') && voitureForm.get('annee').touched}"  matInput  formControlName="annee" style="width:150px; margin-left:180px" class="form-control " id="inlineFormCustomSelectPref">
+          <option selected></option>
+          <option value="2000" >2000</option>
+          <option value="2002">2002</option>
+          <option value="2003">2003</option>
+            <option value="2004">2004</option>
+              <option value="2005">2005</option>
+                <option value="2006">2006</option>
+                  <option value="2007">2007</option>
+                  <option value="2008">2008</option>
+                  <option value="2009">2009</option>
+                  <option value="2010">2010</option>
+                  <option value="2011">2011</option>
+                    <option value="2012">2012</option>
+                      <option value="2017">2017</option>
+                        <option value="2018">2018</option>
+                          <option value="2019">2019</option>
+                            <option value="2020">2020</option>
+        </select>
+
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
+            <div class="col-md-3 mb-3">
+              <label style=" margin-left:-176px" for="validationServer02"  >{{'ajout.kilometrage' |translate}}</label><span> *</span>
+              <input matInput  [ngClass]="{'is-invalid ':voitureForm.get('kilometrage').hasError('required') && voitureForm.get('kilometrage').touched}" formControlName="kilometrage" style="width:150px; margin-left:-176px" type="number" class="form-control " id="validationServer02"   required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
+            <div class="col-md-3 mb-3">
+              <label  style=" margin-left:-250px" for="validationServer02"  >{{'ajout.prix' |translate}}</label><span> *</span>
+              <input matInput  [ngClass]="{'is-invalid ':voitureForm.get('prix').hasError('required') && voitureForm.get('prix').touched}"  [ngClass]="{'is-invalid ':voitureForm.get('prix').hasError('min') && voitureForm.get('prix').touched}" formControlName="prix" style="width:150px; margin-left:-260px" type="number" class="form-control " id="validationServer02"   required>
+
+              <div *ngIf="voitureForm.get('prix').hasError('min') && voitureForm.get('prix').touched"  class="invalid-feedback" style="margin-left:-250px">
+                1000 DT minimum
+              </div>
+            </div>
+
+            <div class="col-md-3 mb-3">
+            <label style=" margin-left:180px" for="validationTextarea"  >{{'ajout.adresse' |translate}}</label><span> *</span>
+        <textarea matInput   [ngClass]="{'is-invalid ':voitureForm.get('adresse').hasError('required') && voitureForm.get('adresse').touched}" formControlName="adresse" style="width:330px; margin-left:180px"  class="form-control" id="validationTextarea"  required></textarea>
+        <div class="invalid-feedback" style="margin-left:180px">
+        vous devez renseigner votre adresse
+        </div>
+        </div>
+        <div></div>
+
+    <div class="col-md-3 mb-3">
+            <label  style=" margin-left:280px" for="validationServer02"  >{{'ajout.telephone' |translate}}</label>
+            <input  style="width:150px; margin-left:270px;margin-top:0px" type="number" class="form-control" id="validationServer02"  >
+            <div class="valid-feedback" >
+              Looks good!
+            </div>
+    </div>
+
+
+        <div class="col-md-3 mb-3">
+
+
+        </div>
+        <div class="col-md-3 mb-3">
+
+
+
+        </div>
+        <div class="col-md-3 mb-3">
+          <label    style=" margin-left:180px"for="validationServer02"  >{{'ajout.carosserie' |translate}}</label>
+          <select   [ngClass]="{'is-invalid ':voitureForm.get('carosserie').hasError('required') && voitureForm.get('carosserie').touched}" matInput  formControlName="carosserie" style="width:150px; margin-left:180px" type="text" class="form-control " id="validationServer02"  required>
+      <option selected></option>
+      <option value="citadine">Citadine</option>
+        <option value="compacte">Compacte</option>
+      <option value="Berline">Berline</option>
+      <option value="Coupé">Coupé</option>
+        <option value="Capriolet">Capriolet</option>
+        <option value="4X4">4X4</option>
+        <option value="Monospace">Monospace</option>
+          <option value="Pick up">Pick up</option>
+          <option value="Utilitaire">Utilitaire</option>
+    </select>
+
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+
+        </div>
+        <div class="col-md-3 mb-3">
+          <label    style="margin-top:-250px ;margin-left:100px"for="validationServer02" >{{'ajout.energie' |translate}}</label><span> *</span>
+          <select  [ngClass]="{'is-invalid ':voitureForm.get('energie').hasError('required') && voitureForm.get('energie').touched}" matInput  formControlName="energie"  style="width:150px; margin-left:90px" type="text" class="form-control " id="validationServer02" required>
+      <option selected></option>
+      <option value="essence">Essence</option>
+      <option value="Diesel">Diesel</option>
+
+    </select>
+
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+
+
+        </div>
+        <div class="col-md-3 mb-3">
+          <label    style=" margin-left:10px"for="validationServer02"  >{{'ajout.puissance' |translate}}</label><span> *</span>
+          <select matInput  [ngClass]="{'is-invalid ':voitureForm.get('puissancefiscale').hasError('required') && voitureForm.get('puissancefiscale').touched}" formControlName="puissancefiscale" style="width:150px; margin-left:10px" type="text" class="form-control " id="validationServer02"  required>
+      <option selected></option>
+      <option value="4 CV">4</option>
+        <option value="5 CV">5</option>
+      <option value="7 CV">7</option>
+      <option value="8 CV">8</option>
+      <option value="9 CV">9</option>
+      <option value="10 CV">10</option>
+      <option value="11 CV">12</option>
+      <option value="13 CV">13</option>
+      <option value="14 CV">14</option>
+      <option value="15 CV">15</option>
+      <option value="16 CV">16</option>
+      <option value="17 CV">17</option>
+      <option value="18 CV">18</option>
+      <option value="19 CV">19</option>
+      <option value="20 CV">20</option>
+      <option value="21 CV">21</option>
+      <option value="22 CV">22</option>
+      <option value="23 CV">23</option>
+    </select>
+
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+
+        </div>
+        <div class="col-md-3 mb-3">
+          <label    style=" margin-left:-90px"for="validationServer02" class="nom" >Boite</label><span> *</span>
+          <select matInput  [ngClass]="{'is-invalid ':voitureForm.get('boite').hasError('required') && voitureForm.get('boite').touched}"  formControlName="boite" style="width:150px; margin-left:-90px" type="text" class="form-control " id="validationServer02"  required>
+      <option selected></option>
+      <option value="auto">Auto</option>
+        <option value="manuelle">Manuelle</option>
+
+
+    </select>
+
+
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+
+        </div>
+        <div class="col-md-3 mb-3">
+
+
+        </div>
+        <div class="col-md-3 mb-3">
+          <label    style=" margin-left:-80px"for="validationServer02"  >Transmission</label><span> *</span>
+          <select matInput  [ngClass]="{'is-invalid ':voitureForm.get('transmission').hasError('required') && voitureForm.get('transmission').touched}" formControlName="transmission" style="width:150px; margin-left:-80px" type="text" class="form-control " id="validationServer02"  required>
+      <option selected></option>
+      <option value="traction">Traction</option>
+        <option value="Propulsion">Propulsion</option>
+      <option value="Intégrale">{{'transmission.integral' |translate}}</option>
+
+    </select>
+
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+
+        </div>
+
+        <div class="col-md-3 mb-3">
+          <label    style=" margin-left:-170px"for="validationServer02"  >{{'ajout.couleur' |translate}}</label><span> *</span>
+          <select  [ngClass]="{'is-invalid ':voitureForm.get('couleur').hasError('required') && voitureForm.get('couleur').touched}" matInput  formControlName="couleur" style="width:150px; margin-left:-170px"  class="form-control " id="validationServer02">
+      <option selected></option>
+      <option value="blanc">blanc</option>
+      <option value="noir">noir</option>
+      <option value="gris">gris</option>
+      <option value="beige">beige</option>
+        <option value="bleu">bleu</option>
+    </select>
+
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+
+        </div>
+        <div class="col-md-3 mb-3">
+
+          <label    style=" margin-left:-260px"for="validationServer02"  >{{'ajout.cylindre' |translate}}</label>
+          <input matInput  [ngClass]="{'is-invalid ':voitureForm.get('nbrcylindre').hasError('required') && voitureForm.get('nbrcylindre').touched}"  formControlName="nbrcylindre" style="width:150px; margin-left:-260px" type="number" class="form-control " id="validationServer02"  required>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+        </div>
+        <div class="col-md-3 mb-3">
+
+        </div>
+        <div class="col-md-3 mb-3">
+        <label style=" margin-left:-80px" for="validationTextarea"  >Description</label>
+    <textarea matInput   formControlName="description"  style="width:330px; margin-left:-80px"  class="form-control" id="validationTextarea" required></textarea>
+    <div class="invalid-feedback">
+      Please enter a message in the textarea.
+    </div>
+    </div>
+
+    <div class="col-md-3 mb-3">
+
+
+    </div>
+    <div class="col-md-3 mb-3">
+
+
+    </div>
+    <div class="col-md-3 mb-3">
+
+      <label  style="margin-left:180px" for="validationServer02"  >{{'ajout.photo' |translate}}</label>
+      <button  style="margin-left:180px" class="btn btn-success" type="button" (click)="photo.click()">{{'ajout.ajout' |translate}}</button>
+      <input  [style.display]="'none'" style="width:710px; margin-left:180px" type="file"  formControlName="photo " #photo (change)="onImagePick($event)" required>
+
+            <img  style="margin-left:180px" *ngIf="imagePreview" [src]="imagePreview" alt="">
+
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+
+    </div>
+    <div class="col-md-3 mb-3">
+    </div>
+    <div class="col-md-3 mb-3">
+
+    </div>
+    <div class="col-md-3 mb-3">
+
+    </div>
+  
+
+    <div class="col-md-3 mb-3">
+
+
+    </div>
+    <div class="col-md-3 mb-3">
+
+
+    </div>
+
+
+          </div>
+    <br>
+          <button  class="btn btn-primary" style="margin-left:350px" type="submit">{{'ajout.valider' |translate}}</button>
+          <div class="col-md-3 mb-3">
+
+
+          </div>
+          <div class="col-md-3 mb-3">
+
+          </div>
+          <div class="col-md-3 mb-3">
+
+
+          </div>
+        </form>
+    </div>

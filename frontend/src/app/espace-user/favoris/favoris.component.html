@@ -1,0 +1,78 @@
+<div class="breadcrumb-option set-bg" data-setbg="assets/img/breadcrumb-bg.jpg" style="background-image: url(&quot;assets/img/breadcrumb-bg.jpg&quot;);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="breadcrumb__text">
+                        <h2>{{'espace.favoris' |translate}}</h2>
+                        <div class="breadcrumb__links">
+                            <a ><i class="fa fa-home"></i>{{'header.TITLE' |translate}}</a>
+                            <a >{{'header.space' |translate}}</a>
+                            <span>{{'espace.favoris' |translate}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="blog spad">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-9">
+                        <div class="row">
+
+                            <div class="col-lg-6 col-md-6 col-sm-6" *ngFor="let f of favoris |async| paginate: { id: 'foo',
+                                                      itemsPerPage: 4,
+                                                      currentPage: page,
+                                                      totalItems: voitures.length };">
+                                <div class="blog__item" >
+                                    <div [routerLink]="['/detailvoiture', f.voiture._id]" class="blog__item__pic set-bg" data-setbg="assets/img/blog/blog-2.jpg" style="background-image: url(&quot;{{f.voiture.photo}}&quot;);">
+                                        <ul>
+
+                                            <li>{{f.voiture.kilometrage}} KM</li>
+                                              <li>{{f.voiture.prix}} DT</li>
+                                                <li>{{f.voiture.energie}} </li>
+
+                                        </ul>
+                                    </div>
+                                    <div class="blog__item__text">
+                                        <h5><a [routerLink]="['/detailvoiture', f.voiture._id]">{{f.voiture.modele}}</a> <span (click)="onDelete(f._id)" style="margin-left:100px;color:#db2d2e;">&emsp;{{'espace.deletev' |translate}}</span></h5>
+
+                                        <p>{{f.voiture.description}}</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <pagination-controls  id="foo"  (pageChange)="page = $event"></pagination-controls>
+
+                      <!--  <div class="pagination__option">
+                            <a href="#" class="active">1</a>
+                            <a href="#">2</a>
+                            <a href="#">3</a>
+                            <a href="#"><span class="arrow_carrot-2right"></span></a>
+                        </div> -->
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-9">
+                        <div class="blog__sidebar">
+                            <div action="#" class="blog__sidebar__search">
+                                <input type="text" placeholder="Search..." [(ngModel)]="modelesearch" (input)="inputsearch()">
+
+                            </div>
+
+                            <div class="blog__sidebar__categories">
+                                <h4>{{'header.space' |translate}}</h4>
+                                <ul>
+                                    <li><a href="#">{{'espace.annonce' |translate}}</a></li>
+                                    <li><a href="#">{{'espace.vendre' |translate}}</a></li>
+                                    <li><a href="#">{{'espace.modifier' |translate}} </a></li>
+                                    <li><a href="#">{{'espace.favoris' |translate}}</a></li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>

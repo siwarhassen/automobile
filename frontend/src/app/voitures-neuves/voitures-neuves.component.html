@@ -1,0 +1,37 @@
+
+<div class="breadcrumb-option set-bg" style="background-image: url('assets/img/breadcrumb-bg.jpg');"  style="background-image: url(&quot;assets/img/breadcrumb-bg.jpg&quot;);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="breadcrumb__text">
+                        <h2>{{'header.marque' |translate}}</h2>
+                        <div class="breadcrumb__links">
+                            <a (click)="allerpageAccueil()" ><i class="fa fa-home" ></i> {{'header.TITLE' |translate}}</a>
+
+                            <span>{{'header.neuf' |translate}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+<div class="brands-list-widget" style="margin-left:70px;margin-top:70px">
+    <div class="container" >
+
+                    <div class="bloc-title">
+                <h3><span></span></h3>
+            </div>
+
+                    <a  *ngFor="let marque of marques"  [routerLink]="['/voituresMarque', marque.marque]">
+                <picture>
+
+                    <source type="image/png" srcset="{{marque.photo}}">
+                      <img src="{{marque.photo}}" alt="{{marque.marque}}">
+                    </picture>
+                    </a>
+
+
+
+    </div>
+</div>

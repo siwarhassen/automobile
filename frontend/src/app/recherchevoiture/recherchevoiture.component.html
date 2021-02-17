@@ -1,0 +1,178 @@
+
+<div class="breadcrumb-option set-bg" data-setbg="assets/img/breadcrumb-bg.jpg" style="background-image: url(&quot;assets/img/breadcrumb-bg.jpg&quot;);">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-12 text-center">
+              <div class="breadcrumb__text">
+                  <h2> {{'voitures.cars' |translate}}</h2>
+                  <div class="breadcrumb__links">
+                      <a ><i class="fa fa-home"></i>{{'header.TITLE' |translate}}</a>
+                      <a >{{'header.neuf' |translate}}</a>
+                      <span>{{'voitures.parmarque' |translate}}</span>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+    <section class="car spad">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="car__sidebar">
+                            <div class="car__search">
+                                <h5>{{'voitures.search' |translate}}</h5>
+                                <form action="#">
+                                    <input type="text" placeholder="{{'voitures.placeholder' |translate}}">
+                                    <button type="submit"><i class="fa fa-search"></i></button>
+                                </form>
+                            </div>
+                            <div class="car__filter">
+                                <h5>{{'voitures.filter' |translate}}</h5>
+                                <form action="#">
+
+                                    <select style="display: none;">
+                                        <option data-display="Model">{{'voitures.model' |translate}}</option>
+                                        <option value="">Q3</option>
+                                        <option value="">A4 </option>
+                                        <option value="">AVENTADOR</option>
+                                    </select><div class="nice-select" tabindex="0"><span class="current">{{'voitures.model' |translate}}</span><ul class="list"><li data-value="Select Model" data-display="Model" class="option selected">Select Model</li><li data-value="" class="option">Q3</li><li data-value="" class="option">A4 </li><li data-value="" class="option">AVENTADOR</li></ul></div>
+
+
+                                    <select style="display: none;">
+                                        <option value="">Transmisson</option>
+                                        <option value="">Bluetooth</option>
+                                        <option value="">WiFi</option>
+                                    </select><div class="nice-select" tabindex="0"><span class="current">Transmisson</span><ul class="list"><li data-value="" class="option selected">Transmisson</li><li data-value="" class="option">Bluetooth</li><li data-value="" class="option">WiFi</li></ul></div>
+                                    <select style="display: none;">
+                                        <option value="">{{'voitures.mileage' |translate}}</option>
+                                        <option value="">27</option>
+                                        <option value="">20</option>
+                                        <option value="">15</option>
+                                        <option value="">10</option>
+                                    </select><div class="nice-select" tabindex="0"><span class="current">{{'voitures.mileage' |translate}}</span><ul class="list"><li data-value="" class="option selected">Mileage</li><li data-value="" class="option">27</li><li data-value="" class="option">20</li><li data-value="" class="option">15</li><li data-value="" class="option">10</li></ul></div>
+
+                                    <select style="display: none;">
+                                        <option value="">{{'voitures.couleur' |translate}}</option>
+                                        <option value="">Red</option>
+                                        <option value="">Blue</option>
+                                        <option value="">Black</option>
+                                        <option value="">Yellow</option>
+                                    </select><div class="nice-select" tabindex="0"><span class="current">{{'voitures.couleur' |translate}}</span><ul class="list"><li data-value="" class="option selected">Colors</li><li data-value="" class="option">Red</li><li data-value="" class="option">Blue</li><li data-value="" class="option">Black</li><li data-value="" class="option">Yellow</li></ul></div>
+                                    <div class="filter-price">
+                                        <p>{{'voitures.prix' |translate}}:</p>
+                                        <div class="price-range-wrap">
+                                            <div class="filter-price-range ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content"><div class="ui-slider-range ui-corner-all ui-widget-header" style="left: 14.9999%; width: 68.3334%;"></div><span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default" style="left: 14.9999%;"></span><span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default" style="left: 83.3333%;"></span></div>
+                                            <div class="range-slider">
+                                                <div class="price-input">
+                                                    <input type="text" id="filterAmount">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="car__filter__btn">
+                                        <button type="submit" class="site-btn">{{'voitures.filt' |translate}}</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-9">
+                        <div class="car__filter__option">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="car__filter__option__item">
+                                        <h6>{{'voitures.show' |translate}}</h6>
+                                      </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="car__filter__option__item car__filter__option__item--right">
+                                        <h6>{{'voitures.sort' |translate}}</h6>
+                                        <select style="display: none;">
+                                            <option value="">{{'voitures.high' |translate}}</option>
+                                            <option value="">{{'voitures.low' |translate}}</option>
+                                        </select><div class="nice-select" tabindex="0"><span class="current">{{'voitures.high' |translate}}</span><ul class="list"><li data-value="" class="option selected">Price: Highest Fist</li><li data-value="" class="option">Price: Lowest Fist</li></ul></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4" *ngFor="let voiture of voitures " >
+                                <div class="car__item">
+                                    <div class="car__item__pic__slider owl-carousel owl-loaded owl-drag">
+
+
+
+
+                                    <div class="owl-stage-outer">
+                                      <div class="owl-stage" style="transform: translate3d(-524px, 0px, 0px); transition: all 0s ease 0s; width: 2100px;">
+
+                                          <div class="owl-item cloned" style="width: 262.484px;">
+                                            <img src="{{voiture.photo}}" alt="">
+                                          </div>
+                                          <div class="owl-item active" style="width: 262.484px;">
+                                            <img src="{{voiture.photo}}" alt="">
+                                          </div>
+
+                                            <div class="owl-item" style="width: 262.484px;">
+                                              <img src="{{voiture.photo}}" alt="">
+                                            </div>
+
+                                            </div>
+                                          </div>
+
+                                    </div>
+                                    <div class="car__item__text">
+                                        <div class="car__item__text__inner">
+                                            <div class="label-date">{{voiture.annee}}</div>
+                                            <h5><a [routerLink]="['/detailvoiture', voiture._id]" >{{voiture.modele}}
+</a></h5>
+                                            <ul>
+                                                <li><span>{{voiture.kilometrage}}</span> Km</li>
+                                                <li>{{voiture.boite}}</li>
+
+                                            </ul>
+                                        </div>
+                                        <div class="car__item__price">
+                                            <span class="car-option">{{'voitures.partir' |translate}}:</span>
+                                            <h6>{{voiture.prix}} DT
+                                          </h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <div class="pagination__option">
+                            <a href="#" class="active">1</a>
+                            <a href="#">2</a>
+                            <a href="#">3</a>
+                            <a href="#"><span class="arrow_carrot-2right"></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>

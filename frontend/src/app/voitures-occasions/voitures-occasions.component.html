@@ -1,0 +1,260 @@
+
+<div class="breadcrumb-option set-bg" data-setbg="assets/img/breadcrumb-bg.jpg" style="background-image: url(&quot;assets/img/breadcrumb-bg.jpg&quot;);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="breadcrumb__text">
+                        <h2>{{'voitures.occasions' |translate}}</h2>
+                        <div class="breadcrumb__links">
+
+                              <a   (click)="allerpageAccueil()" ><i class="fa fa-home" ></i> {{'header.TITLE' |translate}}</a>
+                            <span>{{'voitures.occasions' |translate}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="car spad">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="car__sidebar">
+                            <div class="car__search">
+                                <h5>{{'voitures.search' |translate}}</h5>
+                                 <div action="#" class="blog__sidebar__search">
+                                    <input type="text" placeholder="{{'voitures.placeholder' |translate}}" [(ngModel)]="modelesearch" (input)="inputsearch()">
+                                    <button type="submit"><i class="fa fa-search"></i></button>
+                                    </div>
+
+                            </div>
+                            <div class="car__filter">
+                                <h5>{{'voitures.filter' |translate}}</h5>
+
+                                  <select style="width:200px" class="nice-select list"  matInput (change)="selectChangemarqueancienne($event)" (change)="filtrermarque()">
+
+                                      <option  data-display=" " value="" class="option selected">{{'Accueil.brand' |translate}}</option>
+                                      <option class="option" *ngFor="let m of marques" value={{m.marque}}>{{m.marque}}</option>
+                                  </select>
+                                  <br><br>
+
+
+                                <select style="width:200px" class="nice-select" matInput (change)="selectChangemodeleancienne($event)"  >
+                                    <option data-display=" ">{{'Accueil.model' |translate}}</option>
+                                    <option *ngFor="let va of voituresancienne"  value={{va.modele}}>{{va.modele}}</option>
+
+                                </select>
+                                   <br><br>
+
+                                  <select style="width:200px" class="nice-select" tabindex="0" matInput (change)="selectChangecouleurancienne($event)"  >
+                                    <option  value="" class="option selected">Colors</option>
+                                    <option   value="blanc" class="option">{{'couleur.blanc' |translate}}</option>
+                                      <option   value="beige" class="option">beige</option>
+                                    <option   value="rouge" class="option">{{'couleur.rouge' |translate}}</option>
+                                    <option  value="bleu" class="option">{{'couleur.blue' |translate}}</option>
+                                    <option  value="noir" class="option">{{'couleur.noir' |translate}}</option>
+
+                                  </select>
+ <br><br>
+                                  <select style="width:200px" class="nice-select"  matInput (change)="selectChangeboiteancienne($event)"  >
+                                    <option data-display=" " value="" class="option selected">Boite</option>
+                                    <option   value="auto" class="option list">auto</option>
+                                    <option  value="manuelle" class="option list">manuelle</option>
+
+                                  </select>
+ <br><br>
+                                  <select style="width:200px;hight :400px" class="nice-select" matInput (change)="selectChangeanneeancienne($event)" >
+
+                                      <option data-display=" " value="0">{{'Accueil.year' |translate}}</option>
+                                      <option value="2020">2020</option>
+                                      <option value="2019">2019</option>
+                                      <option value="2018">2018</option>
+                                      <option value="2017">2017</option>
+                                      <option value="2016">2016</option>
+                                      <option value="2015">2015</option>
+                                        <option value="2014">2014</option>
+                                          <option value="2013">2013</option>
+                                            <option value="2012">2012</option>
+                                              <option value="2011">2011</option>
+                                                <option value="2010">2010</option>
+                                                  <option value="2009">2009</option>
+                                                      <option value="2008">2008</option>
+                                                          <option value="2007">2007</option>
+                                                              <option value="2006">2006</option>
+                                                                  <option value="2005">2005</option>
+                                                                      <option value="2004">2004</option>
+
+                                  </select>
+ <br><br>
+                                <form >
+
+
+                                  <!--  <div class="nice-select" tabindex="0">
+                                      <span class="current">{{'voitures.model' |translate}}</span>
+                                      <ul class="list">
+                                        <li data-value="Select Model" data-display="Model" class="option selected">Select Model</li>
+                                        <li data-value="" class="option">Q3</li>
+                                        <li data-value="" class="option">A4 </li>
+                                        <li data-value="" class="option">AVENTADOR</li>
+                                      </ul>
+                                    </div> -->
+
+<!--
+                              <div class="nice-select" tabindex="0">
+                                <span class="current">{{'voitures.mileage' |translate}}</span>
+                                <ul class="list">
+                                  <li data-value="" class="option selected">Mileage</li>
+                                  <li data-value="" class="option">27</li>
+                                  <li data-value="" class="option">20</li>
+                                  <li data-value="" class="option">15</li>
+                                  <li data-value="" class="option">10</li>
+                                </ul>
+                              </div> -->
+
+
+                                    <div class="filter-price">
+                                        <p>{{'voitures.prix' |translate}}:</p>
+
+                                        <div class="car-price">
+                                            <p>Price Range:</p>
+
+                                        </div>
+                                           <ng5-slider lass="range-slider"   [(value)]="minValue" [(highValue)]="maxValue" [options]="options"></ng5-slider>
+                                      <!--  <div class="price-range-wrap">
+                                            <div class="filter-price-range ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content"><div class="ui-slider-range ui-corner-all ui-widget-header" style="left: 14.9999%; width: 68.3334%;"></div><span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default" style="left: 14.9999%;"></span><span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default" style="left: 83.3333%;"></span></div>
+                                            <div class="range-slider">
+                                                <div class="price-input">
+                                                    <input type="text" id="filterAmount">
+                                                </div>
+                                            </div>
+                                        </div> -->
+                                    </div>
+
+
+
+
+                                    <div class="car__filter__btn">
+                                        <button type="submit" class="site-btn">{{'voitures.filt' |translate}}</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-9">
+                        <div class="car__filter__option">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="car__filter__option__item">
+                                        <h6>{{'voitures.show' |translate}}</h6>
+                                        <select class="nice-select"  matInput (change)="selectChangepagin($event)" >
+  <option value="8">8 {{'voitures.cars' |translate}}</option>
+                                            <option value="1">1 {{'voitures.cars' |translate}}</option>
+                                           <option value="2">2 {{'voitures.cars' |translate}}</option>
+                                          <option value="3">3 {{'voitures.cars' |translate}}</option>
+                                            <option value="4">4 {{'voitures.cars' |translate}}</option>
+
+                                                                            </select>
+                                      </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="car__filter__option__item car__filter__option__item--right">
+                                        <h6>{{'voitures.sort' |translate}}</h6>
+                                        <select style="display: none;">
+                                            <option value="">{{'voitures.high' |translate}}</option>
+                                            <option value="">{{'voitures.low' |translate}}</option>
+                                        </select><div class="nice-select" tabindex="0"><span class="current">{{'voitures.high' |translate}}</span><ul class="list"><li data-value="" class="option selected">Price: Highest Fist</li><li data-value="" class="option">Price: Lowest Fist</li></ul></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4" *ngFor="let voiture of voitures |async|filterancienne:boite: modele: couleur:annee:minValue:maxValue:marquef |paginate: { id: 'foo',
+                                                      itemsPerPage: pagin,
+                                                      currentPage: page,
+                                                      totalItems: (voitures| async)?.length }; " >
+                                <div class="car__item">
+                                    <div class="car__item__pic__slider owl-carousel owl-loaded owl-drag">
+
+
+
+
+                                    <div class="owl-stage-outer">
+                                      <div class="owl-stage" style="transform: translate3d(-524px, 0px, 0px); transition: all 0s ease 0s; width: 2100px;">
+
+                                          <div class="owl-item cloned" style="width: 262.484px;">
+                                            <img src="{{voiture.photo}}" alt="">
+                                          </div>
+                                          <div class="owl-item active" style="width: 262.484px;">
+                                            <img src="{{voiture.photo}}" alt="">
+                                          </div>
+
+                                            <div class="owl-item" style="width: 262.484px;">
+                                              <img src="{{voiture.photo}}" alt="">
+                                            </div>
+
+                                            </div>
+                                          </div>
+
+                                    </div>
+                                    <div class="car__item__text">
+                                        <div class="car__item__text__inner">
+                                            <div class="label-date">{{voiture.annee}}</div>
+                                            <h5><a [routerLink]="['/detailvoiture', voiture._id]" >{{voiture.modele}}
+</a></h5>
+                                            <ul>
+                                                <li><span>{{voiture.kilometrage}}</span> Km</li>
+                                                <li>{{voiture.boite}}</li>
+
+                                            </ul>
+                                        </div>
+                                        <div class="car__item__price">
+                                            <span class="car-option">{{'voitures.partir' |translate}}:</span>
+                                            <h6>{{voiture.prix}} DT
+                                          </h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <pagination-controls   id="foo"  (pageChange)="page = $event"></pagination-controls>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+                <script>
+                  function filtrerParID(obj) {
+              // Si c'est un nombre
+              console.log("hhhhh");
+              if (obj.id !== undefined && typeof(obj.id) === 'number' && !isNaN(obj.id)) {
+                return true;
+              } else {
+                elementsInvalides++;
+                return false;
+              }
+            }
+                </script>
